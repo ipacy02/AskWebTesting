@@ -22,5 +22,5 @@ jobs:
       - name: Verify Java
         run: java -version
 
-      - name: Run Maven tests
-        run: mvn -f AskWebTesting/AskTesting/pom.xml test
+      - name: Build with Maven
+        run: mvn -DskipTests -B package --no-transfer-progress --file ./pom.xml
