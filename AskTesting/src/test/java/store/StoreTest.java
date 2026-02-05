@@ -12,7 +12,7 @@ public class StoreTest extends BaseTest {
 
     @Test
     void testStore() {
-        StorePage storePage = homePage.clickStore();
+        StorePage storePage = homePage.clickStore();  //this one is for storage page
 
         storePage.setProduct("Anchor Bracelet");
         ProductPage productPage = storePage.clickSubmit();
