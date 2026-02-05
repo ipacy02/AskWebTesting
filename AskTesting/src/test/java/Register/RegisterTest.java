@@ -13,7 +13,7 @@ public class RegisterTest extends BaseTest {
     void testRegister() {
 
         RegistrationPage registrationPage = homePage.clickAccountLink();
-        registrationPage.setUserName("muhu");
+        registrationPage.setUserName("muhu");   //add this to the repository
         registrationPage.setEmail("muhu@gmail.com");
         registrationPage.setPassword("muhuaa20");
 
