@@ -1,19 +1,20 @@
-name: run unit tests of feature branches
+name: Run unit tests
 
 on:
   push:
-    branches: [ master ]     
-
+    branches:
+      - master
 
 jobs:
-  run-unit-test:
+  test:
     runs-on: ubuntu-latest
 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    steps: 
-      - name: Checkout
-        uses: actions/checkout@v3.3.0
+      - name: Show folder structure
+        run: ls -R
 
-
-      - name: run unit test
-        run: mvn test
+      - name: Run Maven tests
+        run: mvn -f AskWebTesting/AskTesting/pom.xml test
