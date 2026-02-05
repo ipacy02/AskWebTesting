@@ -1,4 +1,4 @@
-name: Run unit tests
+name: Debug Maven Build
 
 on:
   push:
@@ -6,24 +6,23 @@ on:
       - master
 
 jobs:
-  test:
+  debug:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up JDK
-        uses: actions/setup-java@v3
-        with:
-          distribution: temurin
-          java-version: 17   # change to 11 if your pom uses Java 11
+      - name: Show full directory tree
+        run: |
+          pwd
+          ls -R
 
-      - name: Verify Java
+      - name: Show Java version
         run: java -version
 
-      - name: Show folder structure
-        run: ls -R
+      - name: Show Maven version
+        run: mvn -version
 
-      - name: Run Maven tests
-        run: mvn -f AskWebTesting/AskTesting/pom.xml test
+      - name: Run Maven with full debug
+        run: mvn -e -X -f AskWebTesting/AskTesting/pom.xml test
