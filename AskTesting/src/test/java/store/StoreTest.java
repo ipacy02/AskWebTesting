@@ -22,8 +22,7 @@ public class StoreTest extends BaseTest {
 
     @Test
     void testAccessoriesCategory() {
-
-        assertEquals(homePage.clickStore().selectCategory("men"), "Men", "Not match");
+        assertEquals(homePage.clickStore().selectCategory("men"), "Men", "Not match"); //this is for men category
         assertEquals(homePage.clickStore().selectCategory("women"), "Women", "Not match");
         assertEquals(homePage.clickStore().selectCategory("mens-jeans"), "Men's Jeans", "Not match");
         assertEquals(homePage.clickStore().selectCategory("mens-shirts"), "Men's Shirts", "Not match");
